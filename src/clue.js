@@ -132,3 +132,32 @@ var roomsArray = [dinningroom,conservatory,kitchen,study,library,billiardroom,lo
 
 // Weapons Collection
 var weaponsArray = [rope,knife,candlestick,dumbbell,poison,axe,bat,trophy,pistol];
+
+function randomSelector(card){
+  var randomselect = Math.floor(Math.random() * card.length);
+  return card[randomselect]
+}
+
+function pickMistery(){
+  var char = randomSelector(charactersArray);
+  var room = randomSelector(roomsArray);
+  var weapon = randomSelector(weaponsArray);
+  var misteryEnvelope = [char,weapon,room];
+  return misteryEnvelope;
+}
+var mistery = pickMistery();
+
+function revealMistery(mistery){
+  var killer = mistery[0].first_name + " " + mistery[0].last_name + " " + "killed Mr.Boddy using the "+ mistery[1].name + " in the "+ mistery[2].name+"!!!!";
+  return killer;
+}
+
+revealMistery(pickMistery());
+
+/*==============Is this worng?
+
+var revealMistery = (misteryEnvelope) => {
+  var killer = mistery[0].first_name + " " + mistery[0].last_name + " " + "killed Mr.Boddy using the "+ mistery[1].name + "in the "+ mistery[2].name+"!!!!";
+  return killer;
+
+}*/
