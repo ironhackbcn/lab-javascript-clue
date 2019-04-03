@@ -87,7 +87,9 @@ var charactersArray = [
 
 var randomCard;
 function randomSelector (para) {
-
+if (para.length === 0) {
+  return undefined;
+}
 var indexOfCard = Math.floor(Math.random() * para.length)
 randomCard = para[indexOfCard];
 return randomCard;
