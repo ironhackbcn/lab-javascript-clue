@@ -125,10 +125,10 @@ var patio = {
 name: "Patio"}
 
 // Characters Collection
-var charactersArray = [];
+var charactersArray = [mrGreen,drOrchid,profPlum,missScarlet,mrsPeacock,mrMustard];
 
 // Rooms' Collection
-var roomsArray = [];
+var roomsArray = [dinningroom,conservatory,kitchen,study,library,billiardroom,lounge,ballroom,hall,spa,livingroom,observatory,theater,guesthouse,patio];
 
 // Weapons Collection
-var weaponsArray = [];
+var weaponsArray = [rope,knife,candlestick,dumbbell,poison,axe,bat,trophy,pistol];
