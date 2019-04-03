@@ -1,94 +1,153 @@
-// Characters
-/*
-mrGreen
-first_name:   Jacob
-last_name:    Green
-color:        green
-description:  He has a lot of connections
-age:          45
-image:        https://pbs.twimg.com/profile_images/506787499331428352/65jTv2uC.jpeg
-occupation:   Entrepreneur
-
-drOrchid
-first_name:   Doctor
-last_name:    Orchid
-color:        white
-description:  PhD in plant toxicology. Adopted daughter of Mr. Boddy
-age:          26
-image:        http://www.radiotimes.com/uploads/images/Original/111967.jpg
-occupation:   Scientist
-
-profPlum
-first_name:   Victor
-last_name:    Plum
-color:        purple
-description:  Billionare video game designer
-age:          22
-image:        https://metrouk2.files.wordpress.com/2016/07/professor-plum.jpg
-occupation:   Designer
-
-missScarlet
-first_name:   Kasandra
-last_name:    Scarlet
-color:        red
-description:  She is an A-list movie star with a dark past
-age:          31
-image:        https://metrouk2.files.wordpress.com/2016/07/miss-scarlett.jpg
-occupation:   Actor
-
-mrsPeacock
-first_name:   Eleanor
-last_name:    Peacock
-color:        blue
-description:  She is from a wealthy family and uses her status and money to earn popularity
-age:          36
-image:        https://metrouk2.files.wordpress.com/2016/07/mrs-peacock.jpg
-occupation:   Socialité
-
-mrMustard
-first_name:   Jack
-last_name:    Mustard
-color:        yellow
-description:  He is a former football player who tries to get by on his former glory
-age:          62
-image:        https://metrouk2.files.wordpress.com/2016/07/colonel-mustard.jpg
-occupation:   Retired Football player
-
-// Weapons
-
-name: rope        ---   weight: 10
-name: knife       ---   weight: 8
-name: candlestick ---   weight: 2
-name: dumbbell    ---   weight: 30
-name: poison      ---   weight: 2
-name: axe         ---   weight: 15
-name: bat         ---   weight: 13
-name: trophy      ---   weight: 25
-name: pistol      ---   weight: 20
-
-// Rooms
-name: Dinning Room
-name: Conservatory
-name: Kitchen
-name: Study
-name: Library
-name: Billiard Room
-name: Lounge
-name: Ballroom
-name: Hall
-name: Spa
-name: Living Room
-name: Observatory
-name: Theater
-name: Guest House
-name: Patio
-*/
 
 // Characters Collection
 var charactersArray = [];
 
-// Rooms' Collection
-var roomsArray = [];
+function createSuspect(first_name, last_name, color, description, age, image, occupation) {
+  var suspect = {
+    first_name,
+    last_name,
+    color,
+    description,
+    age,
+    image,
+    occupation
+  }
+  return suspect
+}
+
+var mrGreen = createSuspect('Jacob', 'Green',
+  'green',
+  'He has a lot of connections',
+  45,
+  'https://pbs.twimg.com/profile_images/506787499331428352/65jTv2uC.jpeg',
+  'Entrepreneur'
+)
+
+var drOrchid = createSuspect('Doctor', 'Orchid',
+  'white',
+  'PhD in plant toxicology. Adopted daughter of Mr. Boddy',
+  26,
+  'http://www.radiotimes.com/uploads/images/Original/111967.jpg',
+  'Scientist'
+)
+
+var profPlum = createSuspect('Victor',
+  'Plum',
+  'purple',
+  'Billionare video game designer',
+  22,
+  'https://metrouk2.files.wordpress.com/2016/07/professor-plum.jpg', 'designer');
+
+
+var missScarlet = createSuspect('Kasandra',
+  'Scarlet',
+  'red',
+  'She is an A-list movie star with a dark past',
+  31,
+  'https://metrouk2.files.wordpress.com/2016/07/miss-scarlett.jpg',
+  'Actor'
+);
+
+let mrsPeacock = createSuspect('Eleanor',
+  'Peacock',
+  'blue',
+  'She is from a wealthy family and uses her status and money to earn popularity',
+  36,
+  'https://metrouk2.files.wordpress.com/2016/07/mrs-peacock.jpg',
+  'Socialité'
+);
+
+
+let mrMustard = createSuspect(
+  'Jack',
+  'Mustard',
+  'yellow',
+  'He is a former football player who tries to get by on his former glory',
+  62,
+  'https://metrouk2.files.wordpress.com/2016/07/colonel-mustard.jpg',
+  'Retired Football player'
+);
+
+charactersArray.push(mrGreen, drOrchid, profPlum, missScarlet, mrsPeacock, mrMustard);
 
 // Weapons Collection
 var weaponsArray = [];
+
+function createWeapon(name, weight) {
+  let weapon = {
+    name: name,
+    weight: weight
+  }
+  return weapon
+}
+
+weaponsArray.push(createWeapon('rope', 10));
+weaponsArray.push(createWeapon('knife', 8));
+weaponsArray.push(createWeapon('candlestick', 2));
+weaponsArray.push(createWeapon('dumbbell', 30));
+weaponsArray.push(createWeapon('poison', 2));
+weaponsArray.push(createWeapon('axe', 15));
+weaponsArray.push(createWeapon('bat', 13));
+weaponsArray.push(createWeapon('trophy', 25));
+weaponsArray.push(createWeapon('pistol', 20));
+
+
+// Rooms' Collection
+var roomsArray = [];
+
+function createRoom(name) {
+  var room = {
+    name
+  }
+  return room;
+}
+roomsArray.push(createRoom('Dinning Room'));
+roomsArray.push(createRoom('Conservatory'));
+roomsArray.push(createRoom('Kitchen'));
+roomsArray.push(createRoom('Study'));
+roomsArray.push(createRoom('Library'));
+roomsArray.push(createRoom('Billiard Room'));
+roomsArray.push(createRoom('Lounge'));
+roomsArray.push(createRoom('Ballroom'));
+roomsArray.push(createRoom('Hall'));
+roomsArray.push(createRoom('Spa'));
+roomsArray.push(createRoom('Living Room'));
+roomsArray.push(createRoom('Observatory'));
+roomsArray.push(createRoom('Theater'));
+roomsArray.push(createRoom('Guest House'));
+roomsArray.push(createRoom('Patio'));
+
+
+function randomSelector(arrayToSelect) {
+  if (arrayToSelect.length === 0) {
+    return undefined;
+  }
+  var arrayLength = arrayToSelect.length
+  var randomNumber = Math.floor((Math.random() * arrayLength));
+  return arrayToSelect[randomNumber]
+}
+
+
+function pickMistery() {
+  var character = randomSelector(charactersArray);
+  var room = randomSelector(roomsArray);
+  var weapon = randomSelector(weaponsArray);
+
+  return [character, weapon, room];
+
+}
+
+var misteryEnvelope = pickMistery();
+
+function revealMistery(misteryEnvelope) {
+
+
+  var character = misteryEnvelope[0];
+  var weapon = misteryEnvelope[1];
+  var room = misteryEnvelope[2];
+
+  return `${character.first_name} ${character.last_name} killed Mr.Boddy using the ${weapon.name} in the ${room.name}!!!!`
+
+}
+
+
