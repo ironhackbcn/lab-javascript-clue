@@ -1,4 +1,5 @@
 //////////////////////////// Characters Collection
+
 var charactersArray = [];
 
 var mrGreen = {
@@ -64,7 +65,7 @@ var mrGreen = {
 charactersArray.push(mrMustard, mrsPeacock, missScarlet, profPlum, drOrchid, mrGreen);
 
 
-////////////////////////////////// Rooms' Collection
+////////////////////////////////// Rooms Collection
 
 var roomsArray = [];
 
@@ -129,7 +130,8 @@ var patio = {
 
 roomsArray.push(patio, guestHouse, theater, observatory, livingRoom, spa, hall, ballroom, lounge, billiardRoom, library, study, kitchen, conservatory, diningRoom);
 
-// Weapons Collection
+////////////////////////////// Weapons Collection
+
 var weaponsArray = [];
 
 var rope = { 
@@ -189,16 +191,36 @@ var randomSelector = (arr) =>  {
   return randomElement;
 };
 
-//// pickMistery
+//// Pick Mystery
 
-function pickMistery(arr1, arr2, arr3){
-  var mysteryCards = [];
+var mysteryCards = [];
 
   var mysteryCharacter = randomSelector(charactersArray);
   var mysteryWeapon = randomSelector(weaponsArray);
   var mysteryRoom = randomSelector(roomsArray);
 
+function pickMistery(){
   mysteryCards.push(mysteryCharacter, mysteryWeapon, mysteryRoom);
-  
   return mysteryCards;
 }
+
+//// Reveal Mystery
+
+function revealMistery() {
+  var currentHand = pickMistery();
+
+  var revealedCards = [];
+  
+  currentHand.forEach(function(card){
+    revealedCards.push(card);
+  });
+  
+  var killer = mysteryCharacter.first_name + " " + mysteryCharacter.last_name;
+  var chosenWeapon = mysteryWeapon.name;
+  var crimeScene = mysteryRoom.name;
+
+  var mysterySolved = killer + " killed Mr. Boddy using the " + chosenWeapon + " in the " + crimeScene + "!!!";
+
+  return mysterySolved;
+}
+
