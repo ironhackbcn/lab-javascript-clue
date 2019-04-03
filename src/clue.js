@@ -187,8 +187,22 @@ function randomSelector(cards){
     return selectedCard;
   }
   else {
-    selectedCardNo = undefined;
+    return;
   }
 }
 
-randomSelector(charactersArray);
+function pickMistery(characterCard, roomCard, weaponCard) {
+  if (characterCard && roomCard && weaponCard) {
+    var misteryEnvelope = [];
+    for (var i = 0; i < arguments.length; i++) {
+      misteryEnvelope.push(randomSelector(arguments[i])); 
+    }
+    console.log(misteryEnvelope);
+    return misteryEnvelope;
+  }
+  else {
+    return;
+  }
+}
+
+pickMistery(charactersArray, roomsArray, weaponsArray);
