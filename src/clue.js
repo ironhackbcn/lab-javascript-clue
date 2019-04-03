@@ -62,15 +62,15 @@ var mrMustard = {
 
 // Weapons
 
-var rope = {        weight: 10 }
-var knife = {       weight: 8  }
-var candlestick = { weight: 2  }
-var dumbbell = {    weight: 30 }
-var poison = {      weight: 2  }
-var axe = {         weight: 15 }
-var bat = {         weight: 13 }
-var trophy = {      weight: 25 }
-var pistol = {      weight: 20 }
+var rope = {        name: 'rope', ropeweight: 10 }
+var knife = {       name: 'knife', weight: 8  }
+var candlestick = { name: 'candlestick', weight: 2  }
+var dumbbell = {    name: 'dumbbell', weight: 30 }
+var poison = {      name: 'poison', weight: 2  }
+var axe = {         name: 'axe', weight: 15 }
+var bat = {         name: 'bat', weight: 13 }
+var trophy = {      name: 'trophy', weight: 25 }
+var pistol = {      name: 'pistol', weight: 20 }
 
 // Rooms
 var dinningRoom = {   name: 'Dinning Room'  }
@@ -89,19 +89,32 @@ var theater = {       name: 'Theater'       }
 var guestHouse = {    name: 'Guest House'   }
 var patio = {         name: 'Patio'         }
 
-
-
-
-
-
-
-
-
 // Characters Collection
-var charactersArray = [mrGreen,drOrchid,profPlum,missScarlet,mrsPeacock,mrMustard];
+var charactersArray = [mrGreen, drOrchid, profPlum, missScarlet, mrsPeacock, mrMustard];
 
 // Rooms' Collection
-var roomsArray = [];
+var roomsArray = [dinningRoom, conservatory, kitchen, study, library, billiard, lounge, ballroom, hall, spa, livingRoom, observatory, theater, guestHouse, patio];
 
 // Weapons Collection
-var weaponsArray = [rope,knife,candlestick,dumbbell,poison,axe,bat,trophy,pistol];
+var weaponsArray = [rope, knife, candlestick, dumbbell, poison, axe, bat, trophy, pistol];
+
+
+function randomSelector(deck){
+  return deck[Math.floor(Math.random()*deck.length)];
+}
+
+function pickMistery(charactersDeck, weaponsDeck, roomsDeck){
+
+  var mistery = [];
+
+  mistery.push(randomSelector(charactersDeck));
+  mistery.push(randomSelector(weaponsDeck));
+  mistery.push(randomSelector(roomsDeck));  
+  
+ // console.log("longitud: " + mistery.length);
+  return mistery;
+}
+
+var joder = pickMistery(charactersArray, weaponsArray, roomsArray);
+console.log(joder.length);
+//
