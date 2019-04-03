@@ -177,3 +177,18 @@ var roomsArray = [dinningRoom, conservatory, kitchen, study, library, billiardRo
 
 // Weapons Collection
 var weaponsArray = [rope, knife, candlestick, dumbbell, poison, axe, bat, trophy, pistol];
+
+function randomSelector(cards){
+  if (cards.length != 0){
+    min = 0;
+    max = Math.floor(cards.length);
+    selectedCardNo = Math.floor(Math.random() * (max - min)) + min;
+    selectedCard = cards[selectedCardNo];
+    return selectedCard;
+  }
+  else {
+    selectedCardNo = undefined;
+  }
+}
+
+randomSelector(charactersArray);
