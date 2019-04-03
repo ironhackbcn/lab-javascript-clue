@@ -179,7 +179,7 @@ var pistol = {
 
 weaponsArray.push(rope, knife, candlestick, dumbbell, poison, axe, bat, trophy, pistol);
 
-///////////////// Mystery
+//// Random Selector
 
 var randomSelector = (arr) =>  {
   var randomIndex = Math.floor(Math.random() * arr.length);
@@ -189,3 +189,16 @@ var randomSelector = (arr) =>  {
   return randomElement;
 };
 
+//// pickMistery
+
+function pickMistery(arr1, arr2, arr3){
+  var mysteryCards = [];
+
+  var mysteryCharacter = randomSelector(charactersArray);
+  var mysteryWeapon = randomSelector(weaponsArray);
+  var mysteryRoom = randomSelector(roomsArray);
+
+  mysteryCards.push(mysteryCharacter, mysteryWeapon, mysteryRoom);
+  
+  return mysteryCards;
+}
