@@ -178,3 +178,14 @@ var pistol = {
 }
 
 weaponsArray.push(rope, knife, candlestick, dumbbell, poison, axe, bat, trophy, pistol);
+
+///////////////// Mystery
+
+var randomSelector = (arr) =>  {
+  var randomIndex = Math.floor(Math.random() * arr.length);
+  if(arr.length !== 0) {
+    var randomElement = arr[randomIndex];
+  }
+  return randomElement;
+};
+
