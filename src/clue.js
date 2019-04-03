@@ -1,5 +1,4 @@
 // Characters
-
 var mrGreen = {
   first_name:   'Jacob',
   last_name:    'Green',
@@ -60,8 +59,8 @@ var mrMustard = {
   occupation:   'Retired Football player'
 }
 
-// Weapons
 
+// Weapons
 var rope = {        name: 'rope', ropeweight: 10 }
 var knife = {       name: 'knife', weight: 8  }
 var candlestick = { name: 'candlestick', weight: 2  }
@@ -71,6 +70,7 @@ var axe = {         name: 'axe', weight: 15 }
 var bat = {         name: 'bat', weight: 13 }
 var trophy = {      name: 'trophy', weight: 25 }
 var pistol = {      name: 'pistol', weight: 20 }
+
 
 // Rooms
 var dinningRoom = {   name: 'Dinning Room'  }
@@ -89,6 +89,7 @@ var theater = {       name: 'Theater'       }
 var guestHouse = {    name: 'Guest House'   }
 var patio = {         name: 'Patio'         }
 
+
 // Characters Collection
 var charactersArray = [mrGreen, drOrchid, profPlum, missScarlet, mrsPeacock, mrMustard];
 
@@ -103,6 +104,7 @@ function randomSelector(deck){
   return deck[Math.floor(Math.random()*deck.length)];
 }
 
+
 function pickMistery(charactersDeck, weaponsDeck, roomsDeck){
 
   var mistery = [];
@@ -111,10 +113,18 @@ function pickMistery(charactersDeck, weaponsDeck, roomsDeck){
   mistery.push(randomSelector(weaponsDeck));
   mistery.push(randomSelector(roomsDeck));  
   
- // console.log("longitud: " + mistery.length);
   return mistery;
 }
 
-var joder = pickMistery(charactersArray, weaponsArray, roomsArray);
-console.log(joder.length);
-//
+
+function revealMistery(misteryEnvelope){
+
+  var revelation = `${misteryEnvelope[0].first_name} ${misteryEnvelope[0].last_name} killed Mr.Boddy using the ${misteryEnvelope[1].name} in the ${misteryEnvelope[2].name}!!!!`;
+  
+  return revelation;
+
+}
+
+var misteryEnvelope = pickMistery(charactersArray, weaponsArray, roomsArray);
+
+console.log(revealMistery(misteryEnvelope));
