@@ -1,4 +1,4 @@
-
+//Characters
 var mrGreen = {
 first_name:   "Jacob",
 last_name:    "Green",
@@ -56,34 +56,73 @@ image:        "https://metrouk2.files.wordpress.com/2016/07/colonel-mustard.jpg"
 occupation:   "Retired Football player"
 }
 // Weapons
-
-name: rope        ---   weight: 10
-name: knife       ---   weight: 8
-name: candlestick ---   weight: 2
-name: dumbbell    ---   weight: 30
-name: poison      ---   weight: 2
-name: axe         ---   weight: 15
-name: bat         ---   weight: 13
-name: trophy      ---   weight: 25
-name: pistol      ---   weight: 20
-
+var rope = {
+name: "rope",
+weight: 10
+}
+var knife = {
+name: "knife",
+weight: 8
+}
+var candlestick = {
+name: "candlestick",
+weight: 2
+}
+var dumbbell = {
+name: "dumbbell",
+weight: 30
+}
+var poison = {
+name: "poison",
+weight: 2
+}
+var axe = {
+name: "axe",
+weight: 15
+}
+var bat = {
+name: "bat",
+weight: 13
+}
+var trophy = {
+name: "trophy",
+weight: 25
+}
+var pistol = {
+name: "pistol",
+weight: 20
+}
 // Rooms
-name: Dinning Room
-name: Conservatory
-name: Kitchen
-name: Study
-name: Library
-name: Billiard Room
-name: Lounge
-name: Ballroom
-name: Hall
-name: Spa
-name: Living Room
-name: Observatory
-name: Theater
-name: Guest House
-name: Patio
-*/
+var dinningroom = {
+name: "Dinning Room"}
+var conservatory = {
+name: "Conservatory"}
+var kitchen = {
+name: "Kitchen"}
+var study = {
+name: "Study"}
+var library = {
+name: "Library"}
+var billiardroom = {
+name: "Billiard Room"}
+var lounge = {
+name: "Lounge"}
+var ballroom = {
+name: "Ballroom"}
+var hall = {
+name: "Hall"}
+var spa = {
+name: "Spa"}
+var livingroom = {
+name: "Living Room"}
+var observatory = {
+name: "Observatory"}
+var theater = {
+name: "Theater"}
+var guesthouse = {
+name: "Guest House"}
+var patio = {
+name: "Patio"}
 
 // Characters Collection
 var charactersArray = [];
