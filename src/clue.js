@@ -64,35 +64,61 @@ occupation:   "Retired Football player",
 
 // Weapons
 
-var rope        = {weight: 10,}
-var knife       = {weight: 8,}
-var candlestick = {weight: 2,}
-var dumbbell    = {weight: 30,}
-var poison      = {weight: 2,}
-var axe         = {weight: 15,}
-var bat         = {weight: 13,}
-var trophy      = {weight: 25,}
-var pistol      = {weight: 20,}
+var rope        = {
+    weapon: "rope",
+    weight: 10,}
+
+var knife       = {
+    weapon: "knife",
+    weight: 8,}
+
+var candlestick = {
+    weapon: "candlestick",
+    weight: 2,}
+
+var dumbbell    = {
+    weapon: "dumbbell",
+    weight: 30,}
+
+var poison      = {
+    weapon: "poison",
+    weight: 2,}
+
+var axe         = {
+    weapon: "axe",
+    weight: 15,}
+
+var bat         = {
+    weapon: "bat",
+    weight: 13,}
+
+var trophy      = {
+    weapon: "trophy",
+    weight: 25,}
+    
+var pistol      = {
+    weapon: "pistol",
+    weight: 20,}
 
 // Rooms
 
-var rooms = [
-"Dinning Room",
-"Conservatory",
-"Kitchen",
-"Study",
-"Library",
-"Billiard Room",
-"Lounge",
-"Ballroom",
-"Hall",
-"Spa",
-"Living Room",
-"Observatory",
-"Theater",
-"Guest House",
-"Patio",
-];
+var rooms = {
+room: "Dinning Roomroom: ",
+room: "Conservatoryroom: ",
+room: "Kitchenroom: ",
+room: "Studyroom: ",
+room: "Libraryroom: ",
+room: "Billiard Roomroom: ",
+room: "Loungeroom: ",
+room: "Ballroomroom: ",
+room: "Hallroom: ",
+room: "Sparoom: ",
+room: "Living Roomroom: ",
+room: "Observatoryroom: ",
+room: "Theaterroom: ",
+room: "Guest Houseroom: ",
+room: "Patio",
+}
 
 // Characters Collection
 var charactersArray = [];
@@ -121,13 +147,10 @@ console.log(weaponsArray);
 The method should receive an array as an argument,
 and return randomly one of the elements of the array */
 
-random = function randomNum (array) {
-    return Math.floor(Math.random() * array.length);
-}
-
 function randomSelector (array) {
-    return array[random];
-}
+    var randomNum = Math.floor(Math.random() * array.length);
+    return array[randomNum];
+};
 
 console.log(randomSelector(weaponsArray))
 console.log(randomSelector(roomsArray))
@@ -139,3 +162,14 @@ and return an array with the 3 picked cards, a character, a weapon and a room.
 Our mystery should be stored on a misteryEnvelope variable. */
 
 function pickMistery (randomSelector())
+
+
+
+
+// Iteration 3 - Revealing the mistery
+
+/*Finally, we need to reveal the mystery. Create a revealMistery method, that will receive our
+misteryEnvelope array as an argument and return the revealed mystery like this:
+<FIRST NAME> <LAST NAME> killed Mr.Boddy using the <WEAPON> in the <PLACE>!!!! */
+
+revealMistery 
