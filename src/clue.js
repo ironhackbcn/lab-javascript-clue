@@ -96,19 +96,15 @@ return randomCard;
 
 }
 
-
+var misteryEnvelope = [];
 function pickMistery () {
-  var misteryEnvelope = [];
-  misteryEnvelope[0] = (randomSelector(rooms));
-  misteryEnvelope[1] = (randomSelector(charactersArray));
-  misteryEnvelope[2] = (randomSelector(weaponsObject));
+  misteryEnvelope[0] = randomSelector(rooms);
+  misteryEnvelope[1] = randomSelector(charactersArray);
+  misteryEnvelope[2] = randomSelector(weaponsObject);
   return misteryEnvelope;
 }
 
 function revealMistery (misteryEnvelope) {
-  var weapon = misteryEnvelope.pop();
-  var character = misteryEnvelope.pop();
-  var place = misteryEnvelope.pop();
-  var misterySentence = character +  "killed Mr.Boddy using the" + weapon + "in the" + place;
+  var misterySentence = misteryEnvelope[1] + "killed Mr.Boddy using the" + misteryEnvelope[2] + "in the" + misteryEnvelope[0];
   return misterySentence;
 }
