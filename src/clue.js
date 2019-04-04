@@ -97,7 +97,7 @@ return randomCard;
 }
 
 
-function pickMistery (randomSelector) {
+function pickMistery () {
   var misteryEnvelope = [];
   misteryEnvelope[0] = (randomSelector(rooms));
   misteryEnvelope[1] = (randomSelector(charactersArray));
