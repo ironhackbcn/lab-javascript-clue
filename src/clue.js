@@ -1,6 +1,6 @@
 
 // Rooms' Collection
-var rooms = [
+var roomsArray = [
   "Dinning Room",
   "Conservatory",
   "Kitchen",
@@ -19,17 +19,17 @@ var rooms = [
 ];
 
 // Weapons Collection
-var weaponsObject = {
-  rope: 10,
-  knife: 8,
-  candlestick: 2,
-  dumbbell: 30,
-  poison: 2,
-  axe: 15,
-  bat: 13,
-  trophy: 25,
-  pistol: 20
-};
+var weaponsArray = [
+  "rope: 10",
+  "knife: 8",
+  "candlestick: 2",
+  "dumbbell: 30",
+  "poison: 2",
+  "axe: 15",
+  "bat: 13",
+  "trophy: 25",
+  "pistol: 20"
+];
 
 // Characters Collection
 var charactersArray = [
@@ -98,13 +98,13 @@ return randomCard;
 
 var misteryEnvelope = [];
 function pickMistery () {
-  misteryEnvelope[0] = randomSelector(rooms);
-  misteryEnvelope[1] = randomSelector(charactersArray);
-  misteryEnvelope[2] = randomSelector(weaponsObject);
+  misteryEnvelope[0] = randomSelector(charactersArray);
+  misteryEnvelope[1] = randomSelector(weaponsArray);
+  misteryEnvelope[2] = randomSelector(roomsArray);
   return misteryEnvelope;
 }
 
 function revealMistery (misteryEnvelope) {
-  var misterySentence = misteryEnvelope[1] + "killed Mr.Boddy using the" + misteryEnvelope[2] + "in the" + misteryEnvelope[0];
+  var misterySentence = misteryEnvelope[0] + "killed Mr.Boddy using the" + misteryEnvelope[1] + "in the" + misteryEnvelope[2];
   return misterySentence;
 }
