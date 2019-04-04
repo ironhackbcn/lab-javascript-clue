@@ -92,19 +92,7 @@ var charactersArray = [
      { name: "Patio"},
     ];
     
-    
-    // Characters Collection
-   
-    
-    // Rooms' Collection
-    
-    // Weapons Collection
- 
-    
-    
-    //console.log(charactersArray);
-   console.log(weaponsArray);
-    //console.log(roomsArray);
+
     
     function randomSelector(arr) {
         var num = Math.floor(Math.random() * arr.length);
