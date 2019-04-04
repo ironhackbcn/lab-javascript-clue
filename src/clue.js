@@ -181,15 +181,19 @@ var weaponsArray = [rope, knife, candlestick, dumbbell, poison, axe, bat, trophy
 function randomSelector(cards){
     min = 0;
     max = cards.length;
-    return cards[Math.floor(Math.random() * (max - min)) + min];
+    return cards[Math.floor(Math.random() * (max - min)) + min]; 
 }
 
-function pickMistery(characterCard, roomCard, weaponCard) {
+function pickMistery() {
     var misteryEnvelope = [];
-    misteryEnvelope.push(randomSelector(characterCard));
-    misteryEnvelope.push(randomSelector(roomCard));
-    misteryEnvelope.push(randomSelector(weaponCard));
+    misteryEnvelope.push(randomSelector(charactersArray));
+    misteryEnvelope.push(randomSelector(weaponsArray));
+    misteryEnvelope.push(randomSelector(roomsArray));
     return misteryEnvelope;
 }
 
-pickMistery(charactersArray, roomsArray, weaponsArray);
+function revealMistery(pickMistery) {
+  return `<FIRST NAME> <LAST NAME> killed Mr. Boddy using the <WEAPON> in the <PLACE>!!!`;
+}
+
+pickMistery();
