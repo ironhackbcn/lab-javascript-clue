@@ -101,17 +101,18 @@ var weaponsArray = [rope, knife, candlestick, dumbbell, poison, axe, bat, trophy
 
 
 function randomSelector(deck){
+  
   return deck[Math.floor(Math.random()*deck.length)];
 }
 
 
-function pickMistery(charactersDeck, weaponsDeck, roomsDeck){
+function pickMistery(){
 
   var mistery = [];
 
-  mistery.push(randomSelector(charactersDeck));
-  mistery.push(randomSelector(weaponsDeck));
-  mistery.push(randomSelector(roomsDeck));  
+  mistery.push(randomSelector(charactersArray));
+  mistery.push(randomSelector(weaponsArray));
+  mistery.push(randomSelector(roomsArray));  
   
   return mistery;
 }
