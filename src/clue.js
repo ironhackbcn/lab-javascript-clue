@@ -99,9 +99,9 @@ return randomCard;
 
 function pickMistery (randomSelector) {
   var misteryEnvelope = [];
-  misteryEnvelope.push(randomSelector(rooms));
-  misteryEnvelope.push(randomSelector(charactersArray));
-  misteryEnvelope.push(randomSelector(weaponsObject));
+  misteryEnvelope[0] = (randomSelector(rooms));
+  misteryEnvelope[1] = (randomSelector(charactersArray));
+  misteryEnvelope[2] = (randomSelector(weaponsObject));
   return misteryEnvelope;
 }
 
