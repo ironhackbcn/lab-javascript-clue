@@ -136,7 +136,6 @@ var mrsPeacock = {
 	age: 36,
 	image: "https://metrouk2.files.wordpress.com/2016/07/mrs-peacock.jpg",
 	occupation: "Socialité"
-
 };
 
 var mrMustard = {
@@ -232,7 +231,6 @@ function pickMistery() {
 	var roomsCard = misteryEnvelope.push(randomSelector(roomsArray));
 	var weaponsCard = misteryEnvelope.push(randomSelector(weaponsArray));
 	revealMistery(misteryEnvelope);
-
 }
 
 
