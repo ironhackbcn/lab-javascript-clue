@@ -192,8 +192,10 @@ function pickMistery() {
     return misteryEnvelope;
 }
 
-function revealMistery(pickMistery) {
-  return `<FIRST NAME> <LAST NAME> killed Mr. Boddy using the <WEAPON> in the <PLACE>!!!`;
+function revealMistery() {
+  var mistery = pickMistery();
+  console.log(mistery);
+  return mistery[0].first_name + " " + mistery[0].last_name + " killed Mr.Boddy using the " + mistery[1].name + " in the " + mistery[2].name + "!!!!";
 }
 
 pickMistery();
