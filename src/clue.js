@@ -181,7 +181,7 @@ var weaponsArray = [rope, knife, candlestick, dumbbell, poison, axe, bat, trophy
 function randomSelector(cards){
     min = 0;
     max = cards.length;
-    return cards[Math.floor(Math.random() * (max - min)) + min]; 
+    return cards[Math.floor(Math.random() * cards.length)]; 
 }
 
 function pickMistery() {
@@ -192,10 +192,9 @@ function pickMistery() {
     return misteryEnvelope;
 }
 
-function revealMistery() {
-  var mistery = pickMistery();
-  console.log(mistery);
-  return mistery[0].first_name + " " + mistery[0].last_name + " killed Mr.Boddy using the " + mistery[1].name + " in the " + mistery[2].name + "!!!!";
+function revealMistery(mistery) {
+  return (mistery[0].first_name + " " + mistery[0].last_name + " killed Mr.Boddy using the " + mistery[1].name + " in the " + mistery[2].name + "!!!!");
 }
 
-pickMistery();
+var misteryEnvelope = pickMistery();
+console.log(revealMistery(misteryEnvelope));
