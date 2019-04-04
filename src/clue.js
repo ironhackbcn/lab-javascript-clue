@@ -179,30 +179,17 @@ var roomsArray = [dinningRoom, conservatory, kitchen, study, library, billiardRo
 var weaponsArray = [rope, knife, candlestick, dumbbell, poison, axe, bat, trophy, pistol];
 
 function randomSelector(cards){
-  if (cards.length != 0){
     min = 0;
-    max = Math.floor(cards.length);
-    selectedCardNo = Math.floor(Math.random() * (max - min)) + min;
-    selectedCard = cards[selectedCardNo];
-    return selectedCard;
-  }
-  else {
-    return;
-  }
+    max = cards.length;
+    return cards[Math.floor(Math.random() * (max - min)) + min];
 }
 
 function pickMistery(characterCard, roomCard, weaponCard) {
-  if (characterCard && roomCard && weaponCard) {
     var misteryEnvelope = [];
-    for (var i = 0; i < arguments.length; i++) {
-      misteryEnvelope.push(randomSelector(arguments[i])); 
-    }
-    console.log(misteryEnvelope);
+    misteryEnvelope.push(randomSelector(characterCard));
+    misteryEnvelope.push(randomSelector(roomCard));
+    misteryEnvelope.push(randomSelector(weaponCard));
     return misteryEnvelope;
-  }
-  else {
-    return;
-  }
 }
 
 pickMistery(charactersArray, roomsArray, weaponsArray);
