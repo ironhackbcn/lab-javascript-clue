@@ -9,15 +9,15 @@ age:          45
 image:        https://pbs.twimg.com/profile_images/506787499331428352/65jTv2uC.jpeg
 occupation:   Entrepreneur
 
-drOrchid
-first_name:   Doctor
-last_name:    Orchid
-color:        white
+drOrchid : {
+first_name:   Doctor,
+last_name:    Orchid,
+color:        white,
 description:  PhD in plant toxicology. Adopted daughter of Mr. Boddy
 age:          26
 image:        http://www.radiotimes.com/uploads/images/Original/111967.jpg
 occupation:   Scientist
-
+}
 profPlum
 first_name:   Victor
 last_name:    Plum
@@ -92,3 +92,23 @@ var roomsArray = [];
 
 // Weapons Collection
 var weaponsArray = [];
+
+var charactersArray = [{
+    first_name: "Jacob",
+    last_name: "Green",
+    color: "green",
+    description: "He has a lot of connections",
+    age: "45",
+    image: "https: //pbs.twimg.com/profile_images/506787499331428352/65jTv2uC.jpeg",
+    occupation: "Entrepreneur"
+  },
+  {
+    first_name: "Doctor",
+    last_name: "Orchid",
+    color: "white",
+    description: "PhD in plant toxicology.Adopted daughter of Mr.Boddy",
+    age: "26",
+    image: "http: //www.radiotimes.com/uploads/images/Original/111967.jpg",
+    occupation: "Scientist",
+  }
+]
