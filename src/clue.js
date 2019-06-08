@@ -270,7 +270,7 @@ function revealMistery(misteryEnvelope) {
     misteryEnvelope[0].lastName
   } killed Mr.Boddy using the ${misteryEnvelope[1].name} in the ${
     misteryEnvelope[2].name
-  }`;
+  }!!!!`;
 
   // <FIRST NAME> misteryEnvelope[0][firstName]
   // <LAST NAME> misteryEnvelope[0][lastName]
