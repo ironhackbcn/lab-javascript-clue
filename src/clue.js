@@ -194,28 +194,24 @@ let pistol = {
   name: "pistol",
   weight: 20
 };
+let Dinning = {
+  name: "Dinning Room"
+};
+let Conservatory = {
+  name: "Conservatory"
+};
+let Kitchen = {
+  name: "Kitchen"
+};
+let Study = {
+  name: "Study"
+};
 
 // Characters Collection
 let charactersArray = [mrGreen, drOrchid, profPlum, missScarlet, mrsPeacock];
 
 // Rooms' Collection
-let roomsArray = [
-  "Dinning Room",
-  "Conservatory",
-  "Kitchen",
-  "Study",
-  "Library",
-  "Billiard Room",
-  "Lounge",
-  "Ballroom",
-  "Hall",
-  "Spa",
-  "Living Room",
-  "Observatory",
-  "Theater",
-  "Guest House",
-  "Patio"
-];
+let roomsArray = [Dinning, Conservatory, Kitchen, Study];
 
 // Weapons Collection
 let weaponsArray = [
@@ -231,15 +227,24 @@ let weaponsArray = [
 ];
 
 //Define random selector
-
+let result;
+result = pickMistery();
 function randomSelector(cards) {
   return cards[Math.floor(Math.random() * cards.length)];
 }
 function pickMistery() {
-  let mistery = [" "];
-
-  mistery[0] = randomSelector(charactersArray);
-  mistery[2] = randomSelector(roomsArray);
-  mistery[1] = randomSelector(weaponsArray);
+  let mistery = [];
+  mistery.push(
+    randomSelector(charactersArray),
+    randomSelector(weaponsArray),
+    randomSelector(roomsArray)
+  );
   return mistery;
+}
+function revealMistery(result) {
+  console.log(
+    `${result[0].first_name} ${
+      result[0].last_name
+    } killed Mr.Boddy using the   ${result[1].name} in the  ${result[2].name}`
+  );
 }
