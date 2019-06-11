@@ -1,3 +1,15 @@
+////////////////////////////////////// Characters Collection
+const charactersArray = [];
+
+charactersArray.push(
+  mrGreen,
+  drOrchid,
+  profPlum,
+  missScarlet,
+  mrsPeacock,
+  mrMustard
+);
+
 const mrGreen = {
   first_name: "Jacob",
   last_name: "Green",
@@ -61,7 +73,20 @@ const mrMustard = {
   occupation: "Retired Football player"
 };
 
-// Weapons
+////////////////////////////////////// Weapons Collection
+const weaponsArray = [];
+
+weaponsArray.push(
+  rope,
+  knife,
+  candlestick,
+  dumbbell,
+  poison,
+  axe,
+  bat,
+  trophy,
+  pistol
+);
 
 const rope = {
   name: "rope",
@@ -108,7 +133,26 @@ const pistol = {
   weight: 20
 };
 
-// Rooms
+////////////////////////////////////// Rooms' Collection
+const roomsArray = [];
+
+roomsArray.push(
+  dinningRoom,
+  conservatory,
+  kitchen,
+  study,
+  library,
+  billiardRoom,
+  lounge,
+  ballroom,
+  hall,
+  spa,
+  livingRoom,
+  observatory,
+  theater,
+  guestHouse,
+  patio
+);
 
 const dinningRoom = {
   name: "Dinning Room"
@@ -156,63 +200,43 @@ const patio = {
   name: "Patio"
 };
 
-// Characters Collection
-const charactersArray = [];
-
-// Rooms' Collection
-const roomsArray = [];
-
-// Weapons Collection
-const weaponsArray = [];
-
-weaponsArray.push(
-  rope,
-  knife,
-  candlestick,
-  dumbbell,
-  poison,
-  axe,
-  bat,
-  trophy,
-  pistol
-);
-
-charactersArray.push(
-  mrGreen,
-  drOrchid,
-  profPlum,
-  missScarlet,
-  mrsPeacock,
-  mrMustard
-);
-
-roomsArray.push(
-  dinningRoom,
-  conservatory,
-  kitchen,
-  study,
-  library,
-  billiardRoom,
-  lounge,
-  ballroom,
-  hall,
-  spa,
-  livingRoom,
-  observatory,
-  theater,
-  guestHouse,
-  patio
-);
-
+////////////////////////////////////////////////////////////////////////functions////////////////////////////////////
 //seccion random
-function randomSelector(params) {}
 
-/*function getRandomInt(max) {
-  return Math.floor(Math.random() * Math.floor(max));
-}*/
+function randomSelector(array) {
+  var randomCard = Math.random(randomCard) * array.length;
+
+  randomCard = Math.floor(randomCard);
+
+  if (array.length === 0) {
+    return undefined;
+  }
+
+  if (array.length === 1) {
+    return array[0];
+  }
+
+  return array[randomCard];
+}
 
 // seccion pickMistery
-function pickMistery(params) {}
+
+function pickMistery() {
+  let envelopeMistery = [];
+
+  envelopeMistery.push(randomSelector(charactersArray));
+  envelopeMistery.push(randomSelector(weaponsArray));
+  envelopeMistery.push(randomSelector(roomsArray));
+
+  return envelopeMistery;
+}
 
 //seccionrevealMistery
-function revealMistery(params) {}
+function revealMistery(array) {
+  let misteryResult = [
+    `${array[0].first_name}${array[0].last_name}Killed Mr.Boody using the ${
+      array[1].name
+    }in the ${array[2].name}!!!!`
+  ];
+  return misteryResult[0];
+}
