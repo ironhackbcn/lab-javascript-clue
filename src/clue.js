@@ -1,15 +1,6 @@
 ////////////////////////////////////// Characters Collection
 const charactersArray = [];
 
-charactersArray.push(
-  mrGreen,
-  drOrchid,
-  profPlum,
-  missScarlet,
-  mrsPeacock,
-  mrMustard
-);
-
 const mrGreen = {
   first_name: "Jacob",
   last_name: "Green",
@@ -73,20 +64,17 @@ const mrMustard = {
   occupation: "Retired Football player"
 };
 
+charactersArray.push(
+  mrGreen,
+  drOrchid,
+  profPlum,
+  missScarlet,
+  mrsPeacock,
+  mrMustard
+);
+
 ////////////////////////////////////// Weapons Collection
 const weaponsArray = [];
-
-weaponsArray.push(
-  rope,
-  knife,
-  candlestick,
-  dumbbell,
-  poison,
-  axe,
-  bat,
-  trophy,
-  pistol
-);
 
 const rope = {
   name: "rope",
@@ -133,26 +121,20 @@ const pistol = {
   weight: 20
 };
 
+weaponsArray.push(
+  rope,
+  knife,
+  candlestick,
+  dumbbell,
+  poison,
+  axe,
+  bat,
+  trophy,
+  pistol
+);
+
 ////////////////////////////////////// Rooms' Collection
 const roomsArray = [];
-
-roomsArray.push(
-  dinningRoom,
-  conservatory,
-  kitchen,
-  study,
-  library,
-  billiardRoom,
-  lounge,
-  ballroom,
-  hall,
-  spa,
-  livingRoom,
-  observatory,
-  theater,
-  guestHouse,
-  patio
-);
 
 const dinningRoom = {
   name: "Dinning Room"
@@ -200,6 +182,24 @@ const patio = {
   name: "Patio"
 };
 
+roomsArray.push(
+  dinningRoom,
+  conservatory,
+  kitchen,
+  study,
+  library,
+  billiardRoom,
+  lounge,
+  ballroom,
+  hall,
+  spa,
+  livingRoom,
+  observatory,
+  theater,
+  guestHouse,
+  patio
+);
+
 ////////////////////////////////////////////////////////////////////////functions////////////////////////////////////
 //seccion random
 
@@ -222,21 +222,23 @@ function randomSelector(array) {
 // seccion pickMistery
 
 function pickMistery() {
-  let envelopeMistery = [];
+  let misteryEnvelope = [];
 
-  envelopeMistery.push(randomSelector(charactersArray));
-  envelopeMistery.push(randomSelector(weaponsArray));
-  envelopeMistery.push(randomSelector(roomsArray));
+  misteryEnvelope.push(
+    randomSelector(charactersArray),
+    randomSelector(weaponsArray),
+    randomSelector(roomsArray)
+  );
 
-  return envelopeMistery;
+  return misteryEnvelope;
 }
 
 //seccionrevealMistery
 function revealMistery(array) {
   let misteryResult = [
-    `${array[0].first_name}${array[0].last_name}Killed Mr.Boody using the ${
+    `${array[0].first_name} ${array[0].last_name} killed Mr.Boddy using the ${
       array[1].name
-    }in the ${array[2].name}!!!!`
+    } in the ${array[2].name}!!!!`
   ];
   return misteryResult[0];
 }
