@@ -1,6 +1,5 @@
 // Characters
-
-let mrGreen = [
+var charactersArray = [
   {
     first_name: "Jacob",
     last_name: "Green",
@@ -9,11 +8,9 @@ let mrGreen = [
     age: 45,
     image:
       "https://pbs.twimg.com/profile_images/506787499331428352/65jTv2uC.jpeg",
-    occupation: Entrepreneur
-  }
-];
+    occupation: "Entrepreneur"
+  },
 
-let drOrchid = [
   {
     first_name: "Doctor",
     last_name: "Orchid",
@@ -22,10 +19,8 @@ let drOrchid = [
     age: 26,
     image: "http://www.radiotimes.com/uploads/images/Original/111967.jpg",
     occupation: "Scientist"
-  }
-];
+  },
 
-let profPlum = [
   {
     first_name: "Victor",
     last_name: "Plum",
@@ -34,10 +29,8 @@ let profPlum = [
     age: 22,
     image: "https://metrouk2.files.wordpress.com/2016/07/professor-plum.jpg",
     occupation: "Designer"
-  }
-];
+  },
 
-let missScarlet = [
   {
     first_name: "Kasandra",
     last_name: "Scarlet",
@@ -46,10 +39,8 @@ let missScarlet = [
     age: 31,
     image: "https://metrouk2.files.wordpress.com/2016/07/miss-scarlett.jpg",
     occupation: "Actor"
-  }
-];
+  },
 
-let mrsPeacock = [
   {
     first_name: "Eleanor",
     last_name: "Peacock",
@@ -59,10 +50,8 @@ let mrsPeacock = [
     age: 36,
     image: "https://metrouk2.files.wordpress.com/2016/07/mrs-peacock.jpg",
     occupation: "Socialité"
-  }
-];
+  },
 
-let mrMustard = [
   {
     first_name: "Jack",
     last_name: "Mustard",
@@ -76,7 +65,7 @@ let mrMustard = [
 ];
 
 // Weapons
-const weapons = [
+var weaponsArray = [
   {
     name: "rope",
     weight: 10
@@ -115,24 +104,24 @@ const weapons = [
   }
 ];
 
-// Rooms
-const rooms = {
-  name: "Dinning Room",
-  name: "Conservatory",
-  name: "Kitchen",
-  name: "Study",
-  name: "Library",
-  name: "Billiard Room",
-  name: "Lounge",
-  name: "Ballroom",
-  name: "Hall",
-  name: "Spa",
-  name: "Living Room",
-  name: "Observatory",
-  name: "Theater",
-  name: "Guest House",
-  name: "Patio"
-};
+// Weapons Collection
+var roomsArray = [
+  { name: "Dinning Room" },
+  { name: "Conservatory" },
+  { name: "Kitchen" },
+  { name: "Study" },
+  { name: "Library" },
+  { name: "Billiard Room" },
+  { name: "Lounge" },
+  { name: "Ballroom" },
+  { name: "Hall" },
+  { name: "Spa" },
+  { name: "Living Room" },
+  { name: "Observatory" },
+  { name: "Theater" },
+  { name: "Guest House" },
+  { name: "Patio" }
+];
 
 ////////////////////
 
@@ -146,22 +135,19 @@ function randomSelector(randomElement) {
   }
 }
 
-// Characters Collection
-var charactersArray = [];
-
 function pickMistery() {
-  const mystery = [];
+  var mystery = [];
   mystery.push(randomSelector(charactersArray));
   mystery.push(randomSelector(weaponsArray));
   mystery.push(randomSelector(roomsArray));
   return mystery;
 }
 
-// Rooms' Collection
-var roomsArray = [];
-
-// Weapons Collection
-var weaponsArray = [];
-
 //Revela Mistery
-function revealMistery() {}
+function revealMistery(misteryResolved) {
+  return `${misteryResolved[0].first_name} ${
+    misteryResolved[0].last_name
+  } killed Mr.Boddy using the ${misteryResolved[1].name} in the ${
+    misteryResolved[2].name
+  }!!!!`;
+}
