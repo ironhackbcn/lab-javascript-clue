@@ -73,33 +73,33 @@ var candlestick = {
   weight: 2
 }
 
-/*
+
 var dumbbell = {
   name: "dumbbell",
   weight: 30
 }
 var poison = {
-  name: poison,
+  name: "poison",
   weight: 2
 }
 var axe = {
-  name: axe,
+  name: "axe",
   weight: 15
 }
 var bat = {
-  name: bat,
+  name: "bat",
   weight: 13
 }
 var trophy = {
-  name: trophy,
+  name: "trophy",
   weight: 25
 }
 var pistol = {
-  name: pistol,
+  name: "pistol",
   weight: 20
 }
 
-*/
+
 
 
 var dinningRoom = {
@@ -113,44 +113,44 @@ var kitchen = {
   name: "Kitchen"
 }
 
-/*
+
 var study = {
-  name: Study
+  name: "Study"
 }
 var library = {
-  name: Library
+  name: "Library"
 }
 var biilliardRoom = {
-  name: Billiard Room
+  name: "Billiard Room"
 }
 var lounge = {
-  name: Lounge
+  name: "Lounge"
 }
 var ballroom = {
-  name: Ballroom
+  name: "Ballroom"
 }
 var hall = {
-  name: Hall
+  name: "Hall"
 }
 var spa = {
-  name: Spa
+  name: "Spa"
 }
 var livingRoom = {
-  name: Living Room
+  name: "Living Room"
 }
 var observatory = {
-  name: Observatory
+  name: "Observatory"
 }
 var theater = {
-  name: Theater
+  name: "Theater"
 }
 var guestHouse = {
-  name: Guest House
+  name: "Guest House"
 }
 var patio = {
-  name: Patio
+  name: "Patio"
 }
-*/
+
 
 
 // Characters Collection
