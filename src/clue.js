@@ -117,10 +117,33 @@ var Patio = {name: 'Patio'}
 
 
 // Characters Collection
-var charactersArray = [drOrchid, drOrchid, profPlum, missScarlet, mrsPeacock, mrMustard];
+var charactersArray = [mrGreen, drOrchid, profPlum, missScarlet, mrsPeacock, mrMustard];
 
 // Rooms' Collection
-var roomsArray = [rope, knife, candlestick, dumbbell, poison, axe, bat, trophy, pistol];
+var roomsArray = [DinningRoom, Conservatory, Kitchen, Study, Library, BilliardRoom, Lounge, Ballroom, Hall, Spa,  LivingRoom, Observatory, Theater, GuestHouse, Patio];
 
 // Weapons Collection
-var weaponsArray = [DinningRoom, Conservatory, Kitchen, Study, Library, BilliardRoom, Lounge, Ballroom, Hall, Spa,  LivingRoom, Observatory, Theater, GuestHouse, Patio];
+var weaponsArray = [rope, knife, candlestick, dumbbell, poison, axe, bat, trophy, pistol];
+
+
+/* Generate random result*/ 
+function randomSelector(array) {
+  let random = Math.floor((Math.random() * array.length) +0);
+  return array[random];
+}
+
+function pickMistery(){
+  let misteryEnvelope = [];
+  misteryEnvelope.push(randomSelector(charactersArray));
+
+  misteryEnvelope.push(randomSelector(weaponsArray));
+
+  misteryEnvelope.push(randomSelector(roomsArray));
+
+  return misteryEnvelope;
+}
+
+function revealMistery(array){
+  let result = `${array[0].first_name} ${array[0].last_name} killed Mr.Boddy using the ${array[1].name} in the ${array[2].name}!!!!`;
+  return result;
+}
