@@ -117,10 +117,43 @@ var Patio = {name: 'Patio'}
 
 
 // Characters Collection
-var charactersArray = [drOrchid, drOrchid, profPlum, missScarlet, mrsPeacock, mrMustard];
+var charactersArray = [mrGreen, drOrchid, profPlum, missScarlet, mrsPeacock, mrMustard];
 
 // Rooms' Collection
-var roomsArray = [rope, knife, candlestick, dumbbell, poison, axe, bat, trophy, pistol];
+var weaponsArray  = [rope, knife, candlestick, dumbbell, poison, axe, bat, trophy, pistol];
 
 // Weapons Collection
-var weaponsArray = [DinningRoom, Conservatory, Kitchen, Study, Library, BilliardRoom, Lounge, Ballroom, Hall, Spa,  LivingRoom, Observatory, Theater, GuestHouse, Patio];
+var roomsArray = [DinningRoom, Conservatory, Kitchen, Study, Library, BilliardRoom, Lounge, Ballroom, Hall, Spa,  LivingRoom, Observatory, Theater, GuestHouse, Patio];
+
+// START CODING
+
+let randomSelector = array => {
+  return array[Math.floor(Math.random() * array.length)]
+};
+
+
+/*
+creem una funció,  que ha de cridar la funció de random selectorper triar a l'atzar un index de les arrays que li diguem.
+amb aquest metode, hem de crear unaaltre array amb els resultats randoms de cada array
+
+*/
+let pickMistery = () => {
+  let mysteryEnvelope =[];
+
+  mysteryEnvelope.push(randomSelector(charactersArray));
+  mysteryEnvelope.push(randomSelector(weaponsArray));
+  mysteryEnvelope.push(randomSelector(roomsArray));
+  
+  return mysteryEnvelope;
+}
+//Aqui creem una variable amb la funció de l'aleatori del 3 arrays per poderho passar com a argument en la seguent funció
+let aux =pickMistery();
+
+let revealMistery = (array) =>{
+
+  return `${array[0].first_name} ${array[0].last_name} killed Mr.Boddy using the ${array[1].name} in the ${array[2].name}!!!!`;
+}
+
+console.log(revealMistery(aux))
+/*<FIRST NAME> <LAST NAME> killed Mr.Boddy using the <WEAPON> in the <PLACE>!!!!*/
+
