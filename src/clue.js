@@ -117,10 +117,37 @@ var Patio = {name: 'Patio'}
 
 
 // Characters Collection
-var charactersArray = [drOrchid, drOrchid, profPlum, missScarlet, mrsPeacock, mrMustard];
+var charactersArray = [mrGreen, drOrchid, profPlum, missScarlet, mrsPeacock, mrMustard];
+//here was some mistakes in code given, 2 times drOrchid no mrGreen, rooms collection mixed up with weapons
 
 // Rooms' Collection
-var roomsArray = [rope, knife, candlestick, dumbbell, poison, axe, bat, trophy, pistol];
+var roomsArray = [DinningRoom, Conservatory, Kitchen, Study, Library, BilliardRoom, Lounge, Ballroom, Hall, Spa,  LivingRoom, Observatory, Theater, GuestHouse, Patio];
 
 // Weapons Collection
-var weaponsArray = [DinningRoom, Conservatory, Kitchen, Study, Library, BilliardRoom, Lounge, Ballroom, Hall, Spa,  LivingRoom, Observatory, Theater, GuestHouse, Patio];
+var weaponsArray = [rope, knife, candlestick, dumbbell, poison, axe, bat, trophy, pistol];
+
+console.log('test');
+
+// Random Selector
+function randomSelector(arr){
+    return arr[Math.floor(Math.random()*arr.length)];
+}
+//console.log(randomSelector(roomsArray));
+
+// Create a mistery
+function pickMistery(){
+  return [randomSelector(charactersArray), 
+    randomSelector(weaponsArray), 
+    randomSelector(roomsArray),];
+}
+var misteryEnvelope = pickMistery();
+
+//console.log(pickMistery());
+
+// Revealing the mistery
+function revealMistery(envelope){
+  return `${envelope[0].first_name} ${envelope[0].last_name} killed Mr.Boddy using the ${envelope[1].name} in the ${envelope[2].name}!!!!`;
+}
+
+console.log(revealMistery(misteryEnvelope));
+
