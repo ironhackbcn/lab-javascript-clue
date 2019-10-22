@@ -117,10 +117,46 @@ var Patio = {name: 'Patio'}
 
 
 // Characters Collection
-var charactersArray = [drOrchid, drOrchid, profPlum, missScarlet, mrsPeacock, mrMustard];
+var charactersArray = [mrGreen, drOrchid, profPlum, missScarlet, mrsPeacock, mrMustard];
 
 // Rooms' Collection
-var roomsArray = [rope, knife, candlestick, dumbbell, poison, axe, bat, trophy, pistol];
+var roomsArray = [DinningRoom, Conservatory, Kitchen, Study, Library, BilliardRoom, Lounge, Ballroom, Hall, Spa,  LivingRoom, Observatory, Theater, GuestHouse, Patio];
 
 // Weapons Collection
-var weaponsArray = [DinningRoom, Conservatory, Kitchen, Study, Library, BilliardRoom, Lounge, Ballroom, Hall, Spa,  LivingRoom, Observatory, Theater, GuestHouse, Patio];
+var weaponsArray = [rope, knife, candlestick, dumbbell, poison, axe, bat, trophy, pistol];
+
+
+
+//Random Selector
+
+function randomSelector (cardStack) {
+  return cardStack[Math.round(Math.random()*(cardStack.length-1))];
+}
+
+//Create the mistery
+
+function pickMistery() {
+  var pickedCards = [];
+
+  pickedCards.push(randomSelector(charactersArray));
+  pickedCards.push(randomSelector(weaponsArray));
+  pickedCards.push(randomSelector(roomsArray));
+  
+
+  return pickedCards;  
+}
+
+var misteryEnvelope = pickMistery();
+
+function revealMistery(misteryEnvelope) {
+  var firstName = misteryEnvelope[0].first_name;
+  var lastName = misteryEnvelope[0].last_name;
+  var weapon = misteryEnvelope[1].name;
+  var place = misteryEnvelope[2].name;
+
+  return firstName + " " + lastName + " killed Mr.Boddy using the " + weapon + " in the " + place + '!!!!';
+}
+
+console.log(revealMistery(misteryEnvelope));
+
+//<FIRST NAME> <LAST NAME> killed Mr.Boddy using the <WEAPON> in the <PLACE>!!!!
