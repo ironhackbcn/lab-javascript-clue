@@ -126,7 +126,7 @@ var roomsArray = [DinningRoom, Conservatory, Kitchen, Study, Library, BilliardRo
 // Weapons Collection
 var weaponsArray = [rope, knife, candlestick, dumbbell, poison, axe, bat, trophy, pistol];
 
-console.log('test');
+//console.log('test');
 
 // Random Selector
 function randomSelector(arr){
