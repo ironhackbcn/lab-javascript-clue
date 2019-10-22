@@ -1,5 +1,7 @@
 // Characters
 
+
+
 var mrGreen = {
 first_name:  'Jacob',
 last_name:   'Green',
@@ -117,10 +119,22 @@ var Patio = {name: 'Patio'}
 
 
 // Characters Collection
-var charactersArray = [drOrchid, drOrchid, profPlum, missScarlet, mrsPeacock, mrMustard];
+var charactersArray = [mrGreen, drOrchid, profPlum, missScarlet, mrsPeacock, mrMustard];
 
 // Rooms' Collection
 var roomsArray = [rope, knife, candlestick, dumbbell, poison, axe, bat, trophy, pistol];
 
 // Weapons Collection
 var weaponsArray = [DinningRoom, Conservatory, Kitchen, Study, Library, BilliardRoom, Lounge, Ballroom, Hall, Spa,  LivingRoom, Observatory, Theater, GuestHouse, Patio];
+
+console.log(charactersArray);
+
+
+// I don't know is not working with adding a property to show...
+function randomSelector(arr){
+  var randomCard = Math.round(Math.random()*6);
+  //console.log(arr[randomCard].age);
+  return arr[randomCard];
+}
+
+randomSelector(charactersArray);
