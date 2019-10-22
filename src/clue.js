@@ -59,6 +59,16 @@ image:        'https://metrouk2.files.wordpress.com/2016/07/colonel-mustard.jpg'
 occupation:   'Retired Football player'
 }
 
+var mrStrange = {
+first_name:   'Ko',
+last_name:    'Sakamichi',
+color:        'violet',
+description:  'He is NOT a fictional penguin',
+age:          5,
+image:        'https://picsum.photos/200/300',
+occupation:   'Accountant spy'
+}
+
 // Weapons
 
 var rope = {
@@ -97,6 +107,10 @@ var pistol = {
   name: 'pistol',
   weight: 20
 };
+var bust = {
+  name: 'bust',
+  weight: 110,
+};
 
 // Rooms
 var DinningRoom = {name: 'Dinning Room'}
@@ -114,13 +128,36 @@ var Observatory = {name: 'Observatory'}
 var Theater = {name: 'Theater'}
 var GuestHouse = {name: 'Guest House'}
 var Patio = {name: 'Patio'}
-
+var Roof = {name: 'Roof'}
 
 // Characters Collection
 var charactersArray = [drOrchid, drOrchid, profPlum, missScarlet, mrsPeacock, mrMustard];
 
 // Rooms' Collection
-var roomsArray = [rope, knife, candlestick, dumbbell, poison, axe, bat, trophy, pistol];
+var roomsArray = [rope, knife, candlestick, dumbbell, poison, axe, bat, trophy, pistol, bust];
 
 // Weapons Collection
-var weaponsArray = [DinningRoom, Conservatory, Kitchen, Study, Library, BilliardRoom, Lounge, Ballroom, Hall, Spa,  LivingRoom, Observatory, Theater, GuestHouse, Patio];
+var weaponsArray = [DinningRoom, Conservatory, Kitchen, Study, Library, BilliardRoom, Lounge, Ballroom, Hall, Spa,  LivingRoom, Observatory, Theater, GuestHouse, Patio, Roof];
+
+charactersArray.push(mrStrange)
+roomsArray.push(bust)
+weaponsArray.push(Roof)
+
+function randomSelector(array){
+  return array[Math.floor(Math.random()*array.length)]
+}
+
+function pickMistery(){
+  var pickCharacter = randomSelector(charactersArray);
+  var pickWeapon = randomSelector(weaponsArray);
+  var pickRoom = randomSelector(roomsArray);
+  var misteryEnvelope = [];
+  misteryEnvelope.push(pickCharacter, pickWeapon, pickRoom)
+  return misteryEnvelope;
+};
+
+function revealMistery(misteryEnvelopeResult){
+  return `${misteryEnvelopeResult[0].first_name} ${misteryEnvelopeResult[0].last_name} killed Mr.Boddy using the ${misteryEnvelopeResult[1].name} in the ${misteryEnvelopeResult[2].name}!!!!`
+};
+
+revealMistery(pickMistery)
