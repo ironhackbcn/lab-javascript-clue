@@ -122,19 +122,59 @@ var Patio = {name: 'Patio'}
 var charactersArray = [mrGreen, drOrchid, profPlum, missScarlet, mrsPeacock, mrMustard];
 
 // Rooms' Collection
-var roomsArray = [rope, knife, candlestick, dumbbell, poison, axe, bat, trophy, pistol];
+var roomsArray = [DinningRoom, Conservatory, Kitchen, Study, Library, BilliardRoom, Lounge, Ballroom, Hall, Spa,  LivingRoom, Observatory, Theater, GuestHouse, Patio];
 
 // Weapons Collection
-var weaponsArray = [DinningRoom, Conservatory, Kitchen, Study, Library, BilliardRoom, Lounge, Ballroom, Hall, Spa,  LivingRoom, Observatory, Theater, GuestHouse, Patio];
+var weaponsArray = [rope, knife, candlestick, dumbbell, poison, axe, bat, trophy, pistol];
+
+
 
 console.log(charactersArray);
 
 
-// I don't know is not working with adding a property to show...
+// Random element of the array.
 function randomSelector(arr){
-  var randomCard = Math.round(Math.random()*6);
-  //console.log(arr[randomCard].age);
+  var randomCard = Math.round(Math.random()*5);
   return arr[randomCard];
 }
-
 randomSelector(charactersArray);
+
+var misteryEnvelope= [];
+
+//in Result I think there are 3 arrays.. but says that not true..
+function pickMistery(){
+  var cardChar = randomSelector(charactersArray);
+  var cardRoom = randomSelector(roomsArray);
+  var cardWeapons = randomSelector(weaponsArray);
+
+  misteryEnvelope = misteryEnvelope.concat(cardChar);
+  misteryEnvelope = misteryEnvelope.concat(cardRoom);
+  misteryEnvelope = misteryEnvelope.concat(cardWeapons);
+
+  return misteryEnvelope;
+}
+pickMistery();
+
+
+
+var prueba = [];
+var final = [];
+
+
+function revealMistery(murder){
+  console.log(murder);
+
+  prueba = Object.values(murder);
+
+  var firstName = prueba[0].first_name;
+  var lastName = prueba[0].last_name;
+  var room = prueba[1].name;
+  var weapon = prueba[2].name;
+
+  final = firstName.concat(" ", lastName, " killed Mr.Boddy using the ",room, " in the ",  weapon, "!!!!");
+
+  return final;
+
+}
+
+revealMistery(pickMistery());
