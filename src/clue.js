@@ -97,6 +97,7 @@ var pistol = {
   name: 'pistol',
   weight: 20
 };
+// Characters Collection --- following three collections are 
 
 // Rooms
 var DinningRoom = {name: 'Dinning Room'}
@@ -116,7 +117,7 @@ var GuestHouse = {name: 'Guest House'}
 var Patio = {name: 'Patio'}
 
 
-// Characters Collection
+// Characters Collection --- following three collections are arrays with obects stored as the elements
 var charactersArray = [mrGreen, drOrchid, profPlum, missScarlet, mrsPeacock, mrMustard];
 
 // Rooms' Collection
@@ -132,7 +133,9 @@ function randomSelector(array) {
   return array[Math.floor(Math.random() * array.length)];
 }
 
-// Create the mystery
+// Create the mystery ---- first create function pickMistery() - then create new array misteryEnvelope with 3 empty slots 
+//     - assign each empty slot randomSelector() which will use a different array (card stack) as its parameter (character,weapon,room) which will generate randomly
+//      when called upon - then return array
 
 function pickMistery() {
   var misteryEnvelope = new Array(3);
@@ -144,8 +147,8 @@ function pickMistery() {
   return misteryEnvelope;
 }
 
-
 // Iteration 3 - Revealing the mistery
+// select values from objects nested in arrays using dot selectors followed by the name of the value - make sure text is printed with correct spaces between words
 
 function revealMistery(array) {
   return array[0].first_name +" "+ array[0].last_name + " killed Mr.Boddy using the " + array[1].name + " in the " + array[2].name + "!!!!";
