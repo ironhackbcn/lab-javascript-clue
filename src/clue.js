@@ -124,3 +124,31 @@ var roomsArray = [rope, knife, candlestick, dumbbell, poison, axe, bat, trophy, 
 
 // Weapons Collection
 var weaponsArray = [DinningRoom, Conservatory, Kitchen, Study, Library, BilliardRoom, Lounge, Ballroom, Hall, Spa,  LivingRoom, Observatory, Theater, GuestHouse, Patio];
+
+
+// -- ITERATION 2 --
+// Random Selector
+function randomSelector (cardArray) {
+  var randomPosition = Math.floor(Math.random()*cardArray.length);
+  var selectedCard = cardArray[randomPosition];
+
+  return selectedCard
+}
+
+// Create the mistery
+function pickMistery () {
+  var pickedChar = randomSelector(charactersArray);
+  var pickedRoom = randomSelector(roomsArray);
+  var pickedWeapon = randomSelector(weaponsArray);
+  var misteryEnvelope = [pickedChar,pickedWeapon,pickedRoom];
+
+  return misteryEnvelope
+}
+
+function revealMistery (misteryArray) {
+  var character = misteryArray[0];
+  var weapon = misteryArray[1];
+  var room = misteryArray[2];
+
+  return `${character.first_name} ${character.last_name} killed Mr.Boddy using the ${weapon.name} in the ${room.name}!!!!`
+}
