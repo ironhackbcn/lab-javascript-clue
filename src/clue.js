@@ -117,10 +117,45 @@ var Patio = {name: 'Patio'}
 
 
 // Characters Collection
-var charactersArray = [drOrchid, drOrchid, profPlum, missScarlet, mrsPeacock, mrMustard];
+var charactersArray = [mrGreen, drOrchid, profPlum, missScarlet, mrsPeacock, mrMustard];
 
 // Rooms' Collection
 var roomsArray = [rope, knife, candlestick, dumbbell, poison, axe, bat, trophy, pistol];
 
 // Weapons Collection
 var weaponsArray = [DinningRoom, Conservatory, Kitchen, Study, Library, BilliardRoom, Lounge, Ballroom, Hall, Spa,  LivingRoom, Observatory, Theater, GuestHouse, Patio];
+
+function randomSelector(cards)
+{
+  if (cards.length === 0) {
+    return undefined;
+  } else {
+return cards[Math.floor(Math.random()*cards.length)];
+  }
+}
+
+console.log(randomSelector(charactersArray));
+
+function pickMistery(){
+  var Choice = [];
+ 
+ Choice.push(randomSelector(charactersArray), randomSelector(weaponsArray), randomSelector(roomsArray));
+
+return(Choice);
+
+}
+
+var misteryEnvelope = pickMistery();
+
+console.log(misteryEnvelope);
+
+function revealMistery(chosenone){
+
+  var whoskiller = chosenone[0].first_name+" "+chosenone[0].last_name+" killed Mr.Boddy using the "+ chosenone[1].name+" in the "+chosenone[2].name+"!!!!";
+  
+ 
+  return whoskiller;
+  }
+  
+  console.log(revealMistery(misteryEnvelope));
+  
