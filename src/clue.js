@@ -1,3 +1,5 @@
+// Task 1
+
 // Characters
 
 var mrGreen = {
@@ -13,7 +15,7 @@ var drOrchid = {
 first_name:   'Doctor',
 last_name:    'Orchid',
 color:        'white',
-description:  'PhD in plant toxicology. Adopted daughter of Mr. Boddy',
+description:  'PhD in plant toxicology. Adopted d[ughter of Mr. Boddy',
 age:          26,
 image:        'http://www.radiotimes.com/uploads/images/Original/111967.jpg',
 occupation:   'Scientist'
@@ -117,10 +119,37 @@ var Patio = {name: 'Patio'}
 
 
 // Characters Collection
-var charactersArray = [drOrchid, drOrchid, profPlum, missScarlet, mrsPeacock, mrMustard];
+var charactersArray = [mrGreen, drOrchid, profPlum, missScarlet, mrsPeacock, mrMustard];
 
 // Rooms' Collection
 var roomsArray = [rope, knife, candlestick, dumbbell, poison, axe, bat, trophy, pistol];
 
 // Weapons Collection
 var weaponsArray = [DinningRoom, Conservatory, Kitchen, Study, Library, BilliardRoom, Lounge, Ballroom, Hall, Spa,  LivingRoom, Observatory, Theater, GuestHouse, Patio];
+
+// Iteration 2 - Creating the mystery
+
+// Random Selector
+
+function randomSelector (array) {
+  var randomCardElement = array[Math.floor(Math.random()*array.length)];
+
+  return randomCardElement; 
+} 
+
+// Create the mystery
+
+function pickMystery (array) {
+  var mysteryEnvelope = [] ;
+  mysteryEnvelope.push(randomselector(charactersArray),randomselector(weaponsArray), randomselector(roomsArray) );  
+
+  return mysteryEnvelope;
+}
+
+
+// Iteration 3 - Creating the mystery acceder a cade propiedad .firstname .lastname 
+
+function revealMystery (array) {
+ 
+  return `${mysteryEnvelope[0].first_name} ${mysteryEnvelope[0].last_name} killed Mr.Boddy using the ${mysteryEnvelope[1].name} in the ${mysteryEnvelope[2].name} !!!!`;
+}
