@@ -117,10 +117,32 @@ var Patio = {name: 'Patio'}
 
 
 // Characters Collection
-var charactersArray = [drOrchid, drOrchid, profPlum, missScarlet, mrsPeacock, mrMustard];
+var charactersArray = [mrGreen, drOrchid, profPlum, missScarlet, mrsPeacock, mrMustard];
 
 // Rooms' Collection
 var roomsArray = [rope, knife, candlestick, dumbbell, poison, axe, bat, trophy, pistol];
 
 // Weapons Collection
 var weaponsArray = [DinningRoom, Conservatory, Kitchen, Study, Library, BilliardRoom, Lounge, Ballroom, Hall, Spa,  LivingRoom, Observatory, Theater, GuestHouse, Patio];
+
+
+function randomSelector(array){
+  var randomCard = array[Math.floor(Math.random() * array.length)];
+  return randomCard;
+}
+
+    var charactersCard = randomSelector(charactersArray);
+    var weaponsCard = randomSelector(weaponsArray);
+    var roomsCard = randomSelector(roomsArray);
+
+  var pickMistery = function() {
+      return [charactersCard, weaponsCard, roomsCard];
+    };
+  
+var misteryEnvelope = pickMistery();
+
+var revealMistery = function (arr){
+    return arr[0].first_name + " " + arr[0].last_name + " killed Mr.Boddy using the " + arr[1].name + " in the " + arr[2].name + "!!!!";
+  };
+  
+revealMistery(misteryEnvelope);
