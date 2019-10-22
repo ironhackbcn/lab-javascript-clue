@@ -147,7 +147,7 @@ function pickMystery (array) {
 }
 
 
-// Iteration 3 - Creating the mystery acceder a cade propiedad .firstname .lastname 
+// Iteration 3 - Creating the mystery
 
 function revealMystery (array) {
  
