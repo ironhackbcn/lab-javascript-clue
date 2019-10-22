@@ -1,3 +1,5 @@
+// Iteration 1 - Creating the cards
+
 // Characters
 
 var mrGreen = {
@@ -99,6 +101,7 @@ var pistol = {
 };
 
 // Rooms
+
 var DinningRoom = {name: 'Dinning Room'}
 var Conservatory = {name: 'Conservatory'}
 var Kitchen = {name: 'Kitchen'}
@@ -117,10 +120,33 @@ var Patio = {name: 'Patio'}
 
 
 // Characters Collection
-var charactersArray = [drOrchid, drOrchid, profPlum, missScarlet, mrsPeacock, mrMustard];
+var charactersArray = [mrGreen, drOrchid, profPlum, missScarlet, mrsPeacock, mrMustard];
 
 // Rooms' Collection
 var roomsArray = [rope, knife, candlestick, dumbbell, poison, axe, bat, trophy, pistol];
 
 // Weapons Collection
 var weaponsArray = [DinningRoom, Conservatory, Kitchen, Study, Library, BilliardRoom, Lounge, Ballroom, Hall, Spa,  LivingRoom, Observatory, Theater, GuestHouse, Patio];
+
+
+// Iteration 2 - Creating the mistery
+
+// Random Selector
+function randomSelector(arr) {
+  var randomEle = arr[Math.floor(Math.random() * arr.length)];
+  return randomEle;
+}
+
+// Create the mystery
+function pickMistery() {
+  var misteryEnvelope = [];
+  misteryEnvelope.push(randomSelector(charactersArray), randomSelector(weaponsArray), randomSelector(roomsArray));
+  return misteryEnvelope;
+}
+
+
+// Iteration 3 - Revealing the mistery
+
+function revealMistery(arr) {
+  return `${arr[0].first_name} ${arr[0].last_name} killed Mr.Boddy using the ${arr[1].name} in the ${arr[2].name}!!!!`;
+}
