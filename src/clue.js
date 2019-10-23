@@ -134,22 +134,25 @@ console.log(charactersArray);
 
 // Random element of the array.
 function randomSelector(arr){
-  var randomCard = Math.round(Math.random()*5);
+  //Math floor better than round in that case. arr length to be into the array.
+  var randomCard = Math.floor(Math.random()*arr.length);
   return arr[randomCard];
 }
 randomSelector(charactersArray);
 
-var misteryEnvelope= [];
 
-//in Result I think there are 3 arrays.. but says that not true..
+
 function pickMistery(){
+  //this misteryEnevelope variable should be inside the function, if not is calling several times and not working.
+  var misteryEnvelope= [];
+
   var cardChar = randomSelector(charactersArray);
   var cardRoom = randomSelector(roomsArray);
   var cardWeapons = randomSelector(weaponsArray);
 
   misteryEnvelope = misteryEnvelope.concat(cardChar);
-  misteryEnvelope = misteryEnvelope.concat(cardRoom);
   misteryEnvelope = misteryEnvelope.concat(cardWeapons);
+  misteryEnvelope = misteryEnvelope.concat(cardRoom);
 
   return misteryEnvelope;
 }
